@@ -18,8 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}
-      <NavBar />
+      <body className={inter.className}>
+        <div className="w-64 rounded-xl border-2 h-[34rem] flex flex-col justify-between">
+          {children}
+          <NavBar />
+        </div>
       </body>
     </html>
   );
