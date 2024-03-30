@@ -1,0 +1,17 @@
+export enum colourPalette {
+    blue = 'bg-blue-300',
+    lightBlue = 'bg-sky-300',
+    red = 'bg-red-300',
+    green = 'bg-green-300',
+    yellow = 'bg-yellow-300',
+    purple = 'bg-purple-300',
+    pink = 'bg-pink-300',
+    indigo = 'bg-indigo-300',
+    teal = 'bg-teal-300',
+    orange = 'bg-orange-300',
+    gray = 'bg-gray-300',
+    black = 'bg-black-300',
+    white = 'bg-white-300',
+    slate = 'bg-slate-300',
+    transparent = 'bg-transparent',
+}
