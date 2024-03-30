@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export default function Guidance() {
   return (
     <>
-      <img src="Pin.svg" className="absolute max-w-28 ml-36 mb-16" />
+      <Image src="Pin.svg" className="absolute max-w-28 ml-36 mb-16" alt="" width={112} height={112}/>
       <main className="flex flex-col justify-between items-center flex basis-11/12 mx-5 my-10">
 
         <header className="flex self-start">
