@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navbar";
+import StoreProvider from "./StoreProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="w-64 rounded-xl border-2 h-[34rem] flex flex-col justify-between">
-          {children}
-          <NavBar />
-        </div>
-      </body>
+      <StoreProvider>
+        <body className={inter.className}>
+          <div className="w-64 rounded-xl border-2 h-[34rem] flex flex-col justify-between">
+            {children}
+            <NavBar />
+          </div>
+        </body>
+      </StoreProvider>
     </html>
   );
 }

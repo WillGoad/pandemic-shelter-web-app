@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { postsSlice } from "./features/posts/postsSlice";
 
 export const makeStore = () => {
     return configureStore({
-        reducer: {},
+        reducer: {
+            posts: postsSlice.reducer,
+        },
+        devTools: process.env.NODE_ENV !== 'production',
     });
 }
 
