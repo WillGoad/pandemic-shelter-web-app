@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { postsSlice } from "./features/posts/postsSlice";
+import { updatesSlice } from "./features/updates/updatesSlice";
+import { sheltersSlice } from "./features/shelters/sheltersSlice";
 
 export const makeStore = () => {
     return configureStore({
         reducer: {
             posts: postsSlice.reducer,
+            updates: updatesSlice.reducer,
+            shelters: sheltersSlice.reducer,
         },
         devTools: process.env.NODE_ENV !== 'production',
     });

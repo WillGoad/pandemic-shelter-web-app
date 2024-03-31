@@ -17,12 +17,11 @@ export default function Forums() {
   return (
     <>
       <Image src="Postbox.svg" className="absolute max-w-28 ml-36 mb-16 z-[-1]" alt="" width={112} height={112} />
-      <main className="flex flex-col justify-start items-center basis-11/12 mx-5 mt-10 max-h-[26rem]">
-
+      <main className="flex flex-col justify-start items-center basis-11/12 mx-4 mt-10 max-h-[26rem]">
         <header className="flex self-start">
           <h1 className="font-bold">Forums</h1>
         </header>
-        <div className="flex flex-col justify-start items-center mt-4 overflow-y-auto max-h-[calc(95%-3rem)]">
+        <div className="flex flex-col justify-start items-center mt-4 overflow-y-auto max-h-full w-full">
           <section className="flex flex-col gap-4 w-full">
             <RectInfo quantity={14} unit="Posts today" colour={colourPalette.lightBlue} />
             <div className="flex justify-between">
