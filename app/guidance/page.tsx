@@ -6,6 +6,8 @@ import Image from "next/image";
 
 export default function Guidance() {
   const shelters = useAppSelector((state) => state.shelters);
+  const budget = useAppSelector((state) => state.budget);
+  const pets = useAppSelector((state) => state.pets);
 
   return (
     <>
@@ -19,13 +21,17 @@ export default function Guidance() {
             <Image src="Map.svg" alt="" width={240} height={120} />
           </section>
           <section className="flex flex-col gap-2 w-full">
+          <div className="font-bold text-xs">Shelters for You</div>
+            <div className="flex gap-2 overflow-x-auto">
+              {shelters.filter(shelter => shelter.price < budget.budget && (pets.requiresPets === "false" || shelter.doesSupportPets === true)).map((shelter) => <SquareButton key={shelter.id} description={shelter.name} colour={colourPalette.indigo} />)}
+            </div>
             <div className="font-bold text-xs">Nearest Shelters</div>
             <div className="flex gap-2 overflow-x-auto">
               {shelters.filter(shelter => shelter.distance < 10).map((shelter) => <SquareButton key={shelter.id} description={shelter.name} colour={colourPalette.indigo} />)}
             </div>
             <div className="font-bold text-xs">Cost-effective Shelters</div>
             <div className="flex gap-2 overflow-x-auto">
-              {shelters.filter(shelter => shelter.price < 10).map((shelter) => <SquareButton key={shelter.id} description={shelter.name} colour={colourPalette.teal} />)}
+              {shelters.filter(shelter => shelter.price < budget.budget).map((shelter) => <SquareButton key={shelter.id} description={shelter.name} colour={colourPalette.teal} />)}
             </div>
             <div className="font-bold text-xs">Shelters with Pet Support</div>
             <div className="flex gap-2 overflow-x-auto">
